@@ -1,10 +1,10 @@
-﻿<Window x:Class="LayerInterface.MainWindow"
+﻿<Window x:Class="LayerInterface.PersonasPaisesWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LayerInterface"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -15,7 +15,7 @@
         Loaded="Window_Loaded"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450"
+        Height="600"
         Width="800">
     <DockPanel>
         <Menu IsMainMenu="True"
@@ -27,30 +27,10 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Save As.." />
-                <MenuItem Header="Add Person"
-                          InputGestureText="Ctrl+E"
-                          Click="MenuItem_Click">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="PersonAdd" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="ejemplo"
-                          InputGestureText="Ctrl+E"
-                          Click="MenuItem_Click_2">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="PersonAdd" />
-                    </MenuItem.Icon>
-                </MenuItem>
                 <MenuItem Header="Exit"
                           InputGestureText="Ctrl+E">
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="ExitToApp" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Personas por pais"
-                          InputGestureText="Ctrl+P" Click="MenuItem_Click_1">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="People" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
@@ -96,9 +76,8 @@
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar Style="{DynamicResource MaterialDesignToolBar}"
                      ClipToBounds="False">
-                <Button ToolTip="Save"
-                        Click="Button_Click">
-                    <materialDesign:PackIcon Kind="Printer" />
+                <Button ToolTip="Save">
+                    <materialDesign:PackIcon Kind="ContentSave" />
                 </Button>
                 <Separator />
                 <Button Command="Cut"
@@ -121,61 +100,28 @@
             </ToolBar>
         </ToolBarTray>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="310" />
-                <ColumnDefinition Width="690*" />
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"
-                  Margin="20">
-                <GroupBox Header="Registro de País"
-                          Style="{DynamicResource MaterialDesignCardGroupBox}"
-                          materialDesign:ShadowAssist.ShadowDepth="Depth3"
-                          BorderThickness="0">
-                    <GroupBox.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Earth"
-                                                         Height="40"
-                                                         Width="40"
-                                                         VerticalAlignment="Center" />
-                                <TextBlock Margin="10,0,0,0"
-                                           VerticalAlignment="Center"
-                                           Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                                           Text="{Binding}"
-                                           FontWeight="DemiBold"
-                                           HorizontalAlignment="Center"
-                                           FontSize="18" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GroupBox.HeaderTemplate>
-                    <Grid>
-                        <StackPanel>
-
-                            <TextBox x:Name="TextBoxNombre"
-                                     materialDesign:HintAssist.Hint="Nombres"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     VerticalAlignment="Center"
-                                     Margin="20 0" />
-
-                            <Button x:Name="ButtonGuardar"
-                                    Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                                    ToolTip="Resource name: MaterialDesignRaisedButton"
-                                    Height="50"
-                                    Margin="20"
-                                    Click="ButtonGuardar_Click">
-                                Guardar
-                            </Button>
-                        </StackPanel>
-                    </Grid>
-                </GroupBox>
-            </Grid>
             <Grid Grid.Column="1"
                   Margin="10">
                 <materialDesign:Card>
-                    <DataGrid x:Name="DataGridCountry"
-                              CanUserSortColumns="True"
-                              CanUserAddRows="False"
-                              MinHeight="300" />
+                    <StackPanel>
+                        <Grid Margin="50 20">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                                <ComboBox x:Name="ComboBoxCountry"
+                                          materialDesign:HintAssist.Hint="Buscar pais"
+                                          MinWidth="200"
+                                          IsEditable="True"
+                                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                          SelectionChanged="ComboBoxCountry_SelectionChanged">
+
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+                        <DataGrid x:Name="DataGridCountry"
+                                  CanUserSortColumns="True"
+                                  CanUserAddRows="False"
+                                  MinHeight="350" />
+                    </StackPanel>
                 </materialDesign:Card>
             </Grid>
         </Grid>

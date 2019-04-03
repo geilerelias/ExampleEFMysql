@@ -6,9 +6,10 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Infraestructure.Data
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class MysqlContext : DbContextBase
     {
-        public MysqlContext() : base("Name=WebAppCon")
+        public MysqlContext() : base("Name=MysqlContext")
         {
 
         }

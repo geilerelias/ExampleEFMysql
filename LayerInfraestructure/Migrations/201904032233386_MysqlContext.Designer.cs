@@ -7,13 +7,13 @@ namespace LayerInfraestructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class WebAppCon : IMigrationMetadata
+    public sealed partial class MysqlContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(WebAppCon));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MysqlContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904021757443_WebAppCon"; }
+            get { return "201904032233386_MysqlContext"; }
         }
         
         string IMigrationMetadata.Source

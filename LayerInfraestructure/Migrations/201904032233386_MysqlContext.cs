@@ -3,7 +3,7 @@ namespace LayerInfraestructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class WebAppCon : DbMigration
+    public partial class MysqlContext : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace LayerInfraestructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 100),
+                        Name = c.String(nullable: false, maxLength: 100, storeType: "nvarchar"),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -22,10 +22,10 @@ namespace LayerInfraestructure.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         Imagen = c.Binary(nullable: false),
-                        Name = c.String(nullable: false, maxLength: 50),
-                        Phone = c.String(nullable: false, maxLength: 20),
-                        Address = c.String(nullable: false, maxLength: 100),
-                        State = c.String(nullable: false, maxLength: 50),
+                        Name = c.String(nullable: false, maxLength: 50, storeType: "nvarchar"),
+                        Phone = c.String(nullable: false, maxLength: 20, storeType: "nvarchar"),
+                        Address = c.String(nullable: false, maxLength: 100, storeType: "nvarchar"),
+                        State = c.String(nullable: false, maxLength: 50, storeType: "nvarchar"),
                         CountryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)

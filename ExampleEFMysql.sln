@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerApplication", "LayerAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerInfraestructure", "LayerInfraestructure\LayerInfraestructure.csproj", "{AE74CEBE-62D3-4889-8AF8-BCE1338D2A2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerConsoleApp", "LayerConsoleApp\LayerConsoleApp.csproj", "{70A1D71C-CBF1-41E0-AAEE-450442BB9925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AE74CEBE-62D3-4889-8AF8-BCE1338D2A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE74CEBE-62D3-4889-8AF8-BCE1338D2A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE74CEBE-62D3-4889-8AF8-BCE1338D2A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A1D71C-CBF1-41E0-AAEE-450442BB9925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A1D71C-CBF1-41E0-AAEE-450442BB9925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A1D71C-CBF1-41E0-AAEE-450442BB9925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A1D71C-CBF1-41E0-AAEE-450442BB9925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
